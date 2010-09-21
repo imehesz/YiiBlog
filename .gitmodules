@@ -1,0 +1,3 @@
+[submodule "protected/extensions/yii-dbmigrations"]
+	path = protected/extensions/yii-dbmigrations
+	url = http://github.com/pieterclaerhout/yii-dbmigrations.git
