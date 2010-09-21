@@ -4,3 +4,5 @@ protected/runtime/*
 *.zip
 *.gz
 *.swp
+development.php
+production.php
