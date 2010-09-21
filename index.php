@@ -2,7 +2,15 @@
 
 // change the following paths if necessary
 $yii=dirname(__FILE__).'/../../yii-1.1.4.r2429/framework/yii.php';
-$config=dirname(__FILE__).'/protected/config/main.php';
+
+if( stristr( $_SERVER['SERVER_NAME'], 'local' ) || ! isset( $_SERVER['SERVER_NAME'] ) )
+{
+    $config=dirname(__FILE__).'/protected/config/development.php';
+}
+else
+{
+    $config=dirname(__FILE__).'/protected/config/production.php';
+}
 
 // remove the following lines when in production mode
 defined('YII_DEBUG') or define('YII_DEBUG',true);
