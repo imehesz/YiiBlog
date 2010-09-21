@@ -1,0 +1,6 @@
+assets/*
+protected/runtime/*
+*.~
+*.zip
+*.gz
+*.swp
