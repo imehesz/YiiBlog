@@ -3,8 +3,22 @@
 // change the following paths if necessary
 $yii=dirname(__FILE__).'/../../yii-1.1.4.r2429/framework/yii.php';
 
-if( stristr( $_SERVER['SERVER_NAME'], 'local' ) || ! isset( $_SERVER['SERVER_NAME'] ) )
+$mehesz_config=dirname( __FILE__ ) . '/protected/mehesz/config.php';
+
+if( file_exists( $mehesz_config ) )
 {
+	require_once( $mehesz_config );
+}
+else
+{
+	die( 'Missing configuration file, expected here: ' . $mehesz_config );
+}
+
+if( ! isset( $_SERVER['SERVER_NAME'] ) || stristr($_SERVER['SERVER_NAME'], 'local' ) )
+{
+	error_reporting (E_ALL);
+	ini_set("display_errors", 1);
+
     $config=dirname(__FILE__).'/protected/config/development.php';
 }
 else
