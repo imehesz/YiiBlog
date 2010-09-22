@@ -6,3 +6,4 @@ protected/runtime/*
 *.swp
 development.php
 production.php
+*.sqlite
