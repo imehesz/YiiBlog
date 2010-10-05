@@ -29,7 +29,7 @@ $this->pageTitle=$model->title;
 		</div>
 	<?php else: ?>
 		<?php $this->renderPartial('/comment/_form',array(
-			'model'=>$comment,
+			'model'=>Comment::model(),
 		)); ?>
 	<?php endif; ?>
 
