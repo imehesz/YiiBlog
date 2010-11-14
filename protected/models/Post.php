@@ -156,6 +156,9 @@ class Post extends CActiveRecord
         // code...
     }
 
+	/**
+	 *
+	 */
     public function afterSave()
     {
         parent::afterSave();
@@ -163,10 +166,29 @@ class Post extends CActiveRecord
         // code...
     }
 
+	/**
+	 *
+	 */
     public function afterFind()
     {
         parent::afterFind();
         $this->_oldTags = $this->tags;
         // code...
     }
+
+	/**
+	 *
+	 */
+	public function afterDelete()
+	{
+		parent::afterDelete();
+		Comment::model()->deleteAll( 'post_id='.$this->id );
+		Tag::model()->updateFrequency( $this->tags, '' );
+	}
+
+	public function addComment( $comment )
+	{
+		$comment->post_id = $this->id;
+		return $comment->save();
+	}
 }

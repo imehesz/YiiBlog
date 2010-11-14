@@ -48,8 +48,11 @@ class PostController extends Controller
 	{
         $post = $this->loadModel();
 
+		$comment = $this->newComment( $post );
+
 		$this->render('view',array(
 			'model'=> $post,
+			'comment' => $comment,
 		));
 	}
 
@@ -125,7 +128,32 @@ class PostController extends Controller
 	 */
 	public function actionIndex()
 	{
+		/*
 		$dataProvider=new CActiveDataProvider('Post');
+		$this->render('index',array(
+			'dataProvider'=>$dataProvider,
+		));
+		*/
+
+		$criteria=new CDbCriteria(array(
+			'condition'=>'status='.Post::STATUS_PUBLISHED,
+			'order'=>'update_time DESC',
+			'with'=>'commentCount',
+		));
+
+		if(isset($_GET['tag']))	
+		{
+			$criteria->addSearchCondition('tags',$_GET['tag']);
+		}
+
+		$dataProvider=new CActiveDataProvider('Post', array(
+				'pagination'=>array(
+					'pageSize'=>5,
+				),
+				'criteria'=>$criteria,
+			)
+		);
+
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -176,6 +204,34 @@ class PostController extends Controller
 
 		return $this->_model;
 	}
+
+	protected function newComment($post)
+	{
+		$comment=new Comment;
+
+		if(isset($_POST['ajax']) && $_POST['ajax']==='comment-form')
+		{
+			echo CActiveForm::validate($comment);
+			Yii::app()->end();
+		}
+
+		if(isset($_POST['Comment']))
+		{
+			$comment->attributes=$_POST['Comment'];
+			if($post->addComment($comment))
+			{
+				if($comment->status==Comment::STATUS_PENDING)
+				{
+					Yii::app()->user->setFlash('commentSubmitted','Thank you...');
+				}
+
+				$this->refresh();
+			}
+		}
+
+		return $comment;
+	}
+
 
 	/**
 	 * Performs the AJAX validation.

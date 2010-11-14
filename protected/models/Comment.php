@@ -45,9 +45,12 @@ class Comment extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
+			array( 'content,name,email', 'required' ),
 			array('status', 'numerical', 'integerOnly'=>true),
 			array('name, email, website', 'length', 'max'=>255),
 			array('content, create_time, update_time', 'safe'),
+			array( 'email', 'email' ),
+			array( 'website', 'url' ),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, name, email, website, content, status, create_time, update_time', 'safe', 'on'=>'search'),
@@ -62,6 +65,7 @@ class Comment extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'post' => array(self::BELONGS_TO, 'Post', 'post_id' ),
 		);
 	}
 
@@ -75,10 +79,11 @@ class Comment extends CActiveRecord
 			'name' => 'Name',
 			'email' => 'Email',
 			'website' => 'Website',
-			'content' => 'Content',
+			'content' => 'Comment',
 			'status' => 'Status',
 			'create_time' => 'Create Time',
 			'update_time' => 'Update Time',
+			'post_id' => 'Post',
 		);
 	}
 
@@ -105,5 +110,20 @@ class Comment extends CActiveRecord
 		return new CActiveDataProvider(get_class($this), array(
 			'criteria'=>$criteria,
 		));
+	}
+
+	public function beforeSave()
+	{
+		if( parent::beforeSave() )
+		{
+			if( $this->isNewRecord )
+			{
+				$this->create_time = time();
+			}
+
+			return true;
+		}
+	
+		return false;
 	}
 }

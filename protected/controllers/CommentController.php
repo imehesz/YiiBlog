@@ -127,7 +127,16 @@ class CommentController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Comment');
+		$dataProvider=new CActiveDataProvider(
+			'Comment',
+			array(
+				'criteria'	=> array(
+						'with'	=> 'post',
+						'order'	=> 't.status, t.create_time DESC',
+					),
+				)
+		);
+
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -147,6 +156,21 @@ class CommentController extends Controller
 			'model'=>$model,
 		));
 	}
+
+	public function actionApprove()
+	{
+		if(Yii::app()->request->isPostRequest)
+		{
+				$comment=$this->loadModel();
+				$comment->approve();
+				$this->redirect(array('index'));
+		}
+		else
+		{
+			throw new CHttpException(400,'Invalid request...');
+		}
+	}
+
 
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
