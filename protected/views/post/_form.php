@@ -43,6 +43,29 @@
 		<?php echo $form->error($model,'status'); ?>
 	</div>
 
+	<div class="row">
+		<?php echo $form->labelEx($model,'published_date'); ?>
+		<?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+							'name'=>'post[published_date]',
+							//'id'=>'user_Birthdate',
+							'model'=>$model,
+
+							// additional javascript options for the date picker plugin
+							'options'=>array(
+									'showAnim'=>'fold',
+									),
+							'htmlOptions'=>array(
+									'style'=>'height:20px;',
+									'size'=> 10,
+							),
+							'value' => $model->isNewRecord ? 
+											date( 'm/d/Y', time() ) : 
+											date( 'm/d/Y', $model->published_date )
+					));
+	?>
+		<p class="hint">If date is set in the future the post won't be displayed until that date!</p>
+	</div>
+
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>

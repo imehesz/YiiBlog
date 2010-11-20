@@ -48,7 +48,7 @@ class Post extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-            array( 'title, content, status',        'required' ),
+            array( 'published_date, title, content, status',        'required' ),
             array( 'title',                         'length', 'max' => 128 ),
             array( 'status',                        'in', 'range' => array(1,2,3) ),
             array( 'tags',                          'match', 'pattern'=>'/^[\w\s,]+$/', 'message' => 'Tags can only contain word chars.' ),
@@ -89,6 +89,7 @@ class Post extends CActiveRecord
 			'create_time' => 'Create Time',
 			'update_time' => 'Update Time',
 			'userID' => 'User',
+			'published_date' => 'Published Date',
 		);
 	}
 
@@ -141,6 +142,10 @@ class Post extends CActiveRecord
             {
                 $this->create_time = $this->update_time = time();
                 $this->userID = Yii::app()->user->id;
+				if( ! $this->published_date )
+				{
+					$this->published_date = time();
+				}
             }
             else
             {
