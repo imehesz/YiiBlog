@@ -9,6 +9,7 @@ $this->pageTitle=$model->title;
 	'data'=>$model,
 )); ?>
 
+<?php /*
 <div id="comments">
 	<h3>Leave a Comment</h3>
 
@@ -34,3 +35,4 @@ $this->pageTitle=$model->title;
 	<?php endif; ?>
 
 </div><!-- comments -->
+*/ ?>
