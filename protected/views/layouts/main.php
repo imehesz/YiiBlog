@@ -31,8 +31,9 @@
 				array('label'=>'Home', 'url'=>array('/site/index')),
 				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
 				array('label'=>'Contact', 'url'=>array('/site/contact')),
+				array('label'=>'Posts', 'url'=>array('/post')),
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
+				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
 			),
 		)); ?>
 	</div><!-- mainmenu -->
@@ -51,7 +52,9 @@
 
 </div><!-- page -->
 
-<script src="http://cdn.wibiya.com/Toolbars/dir_0636/Toolbar_636987/Loader_636987.js" type="text/javascript"></script>
+<?php if( ENV == 'prod' || ENV == 'production'): ?>
+	<script src="http://cdn.wibiya.com/Toolbars/dir_0636/Toolbar_636987/Loader_636987.js" type="text/javascript"></script>
+<?php endif; ?>
 
 </body>
 </html>

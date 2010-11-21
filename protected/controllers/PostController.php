@@ -136,8 +136,8 @@ class PostController extends Controller
 		*/
 
 		$criteria=new CDbCriteria(array(
-			'condition'=>'status='.Post::STATUS_PUBLISHED,
-			'order'=>'update_time DESC',
+			'condition'=>'status='.Post::STATUS_PUBLISHED . ' AND published_date<' . time(),
+			'order'=>'published_date DESC',
 			'with'=>'commentCount',
 		));
 
@@ -187,7 +187,8 @@ class PostController extends Controller
             {
                 if( Yii::app()->user->isGuest )
                 {
-                    $condition = 'status='.Post::STATUS_PUBLISHED . ' OR status=' . Post::STATUS_APPROVED;
+                    // $condition = 'status='.Post::STATUS_PUBLISHED . ' OR status=' . Post::STATUS_APPROVED;
+                    $condition = 'status='.Post::STATUS_PUBLISHED;
                 }
                 else
                 {

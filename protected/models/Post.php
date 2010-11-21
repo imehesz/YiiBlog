@@ -21,6 +21,11 @@ class Post extends CActiveRecord
     const STATUS_PUBLISHED=2;
     const STATUS_ARCHIVED=3;
 
+	public $published_date_calendar;
+	public $published_hour;
+	public $published_min;
+	public $published_ampm;
+
     private $_oldTags;
 
 	/**
@@ -49,7 +54,11 @@ class Post extends CActiveRecord
 		// will receive user inputs.
 		return array(
             array( 'published_date, title, content, status',        'required' ),
-            array( 'title',                         'length', 'max' => 128 ),
+            array( 'title, 
+					published_date_calendar, 
+					published_hour, 
+					published_min, 
+					published_ampm',                'length', 'max' => 128 ),
             array( 'status',                        'in', 'range' => array(1,2,3) ),
             array( 'tags',                          'match', 'pattern'=>'/^[\w\s,]+$/', 'message' => 'Tags can only contain word chars.' ),
             array( 'tags',                          'normalizeTags' ),
@@ -133,6 +142,13 @@ class Post extends CActiveRecord
     {
         return Yii::app()->createUrl('post/view', array( 'id' => $this->id, 'title' => $this->title ) );
     }
+
+	public function beforeValidate()
+	{
+		$this->published_date = strtotime( $this->published_date_calendar . ' ' . ($this->published_hour+1) . ':' . $this->published_min . $this->published_ampm );
+
+		return parent::beforeValidate();
+	}
 
     public function beforeSave()
     {

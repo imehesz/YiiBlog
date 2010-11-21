@@ -46,7 +46,7 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'published_date'); ?>
 		<?php $this->widget('zii.widgets.jui.CJuiDatePicker', array(
-							'name'=>'post[published_date]',
+							'name'=>'Post[published_date_calendar]',
 							//'id'=>'user_Birthdate',
 							'model'=>$model,
 
@@ -63,6 +63,9 @@
 											date( 'm/d/Y', $model->published_date )
 					));
 	?>
+        <?php echo $form->dropDownList( $model,'published_hour', range(1,12) ); ?>
+        <?php echo $form->dropDownList( $model,'published_min', array('00' => '00', '15' => '15', '30' => '30', '45' => '45') ); ?>
+        <?php echo $form->dropDownList( $model,'published_ampm', array('am' => 'am', 'pm' => 'pm' ) ); ?>
 		<p class="hint">If date is set in the future the post won't be displayed until that date!</p>
 	</div>
 

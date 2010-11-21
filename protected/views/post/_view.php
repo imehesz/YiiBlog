@@ -28,6 +28,10 @@
 	<?php echo CHtml::encode($data->update_time); ?>
 	<br />
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('published_date')); ?>:</b>
+	<?php echo CHtml::encode( date( 'm/d/Y H:i', $data->published_date )); ?>
+	<br />
+
 	<?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('userID')); ?>:</b>
 	<?php echo CHtml::encode($data->userID); ?>
