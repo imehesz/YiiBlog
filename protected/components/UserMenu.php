@@ -8,7 +8,7 @@
 	{
 		public function init()
 		{
-			$this->title=CHtml::encode(Yii::app()->user->name);
+			$this->title= '<h2>admin</h2>';//CHtml::encode(Yii::app()->user->name);
 			parent::init();
 		}
 

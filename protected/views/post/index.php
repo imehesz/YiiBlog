@@ -17,9 +17,9 @@ $this->menu=array(
 )); */ ?>
 
 <?php if(!empty($_GET['tag'])): ?>
-	<h1>Posts Tagged with <i><?php echo CHtml::encode($_GET['tag']); ?></i></h1>
+	<h1>Episodes Tagged with <i><?php echo CHtml::encode($_GET['tag']); ?></i></h1>
 <?php else: ?>
-	<h1>Posts</h1>
+	<h1>Episodes</h1>
 <?php endif; ?>
 
 <?php $this->widget('zii.widgets.CListView', array(
