@@ -10,7 +10,7 @@ Version    : 1.0
 Released   : 20071220
 
 -->
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html dir="ltr" lang="en-US" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://opengraphprotocol.org/schema/">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>Yii Radiio - a PHP podcast focusing on the Yii framework</title>
@@ -23,22 +23,22 @@ Released   : 20071220
 <!-- start header -->
 <div id="header">
 	<div id="logo">
-		<h1><a href="/"><img src="<?php echo Yii::app()->theme->baseUrl;?>/images/yii-icon.png" /> Yii Radiio</a></h1>
+		<h1><a href="/"><img src="<?php echo Yii::app()->theme->baseUrl;?>/images/yii-icon.png" border="0" /> Yii Radiio</a></h1>
 		<p><a href="http://yiiframework.com">a PHP podcast focusing on the Yii framework</a></p>
 	</div>
 	<div id="menu">
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
 				array('label'=>'Home', 'url'=>array('/site/index')),
-				array('label'=>'forum', 'url'=> 'http://yiiframework.com/forum' ),
-				array('label'=>'episodes', 'url'=>array('/post')),
+				array('label'=>'Forum', 'url'=> 'http://www.yiiframework.com/forum/index.php?/topic/3179-yii-radiio-podcast/' ),
+				array('label'=>'Episodes', 'url'=>array('/post'), 'active' => $this->id == 'post' ? true : null ),
+				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
 				/*
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),*/
 				array('label'=>'Contact', 'url'=>array('/site/contact')),
 			),
 		)); ?>
-	
 	</div>
 </div>
 <!-- end header -->
@@ -50,7 +50,7 @@ Released   : 20071220
 </div>
 <!-- end page -->
 <div id="footer">
-	<p>&copy;<?php echo date('Y', time() ); ?> All Rights Reserved. &nbsp;&bull;&nbsp; <a href="http://mehesz.net">mehesz<span style="color:red;">.</span>net</a> &bull; making the web. better.</p>
+	<p>&copy;<?php echo date('Y', time() ); ?> All Rights Reserved. &nbsp;&bull;&nbsp; <a href="http://mehesz.net">mehesz<span style="color:red;">.</span>net</a> &nbsp;&bull;&nbsp; making the web. better.</p>
 </div>
 </body>
 </html>

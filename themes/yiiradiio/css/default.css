@@ -52,12 +52,13 @@ blockquote p, blockquote ul, blockquote ol {
 }
 
 a {
-	color: #7ACE11;
+	/* color: #7ACE11; */
+	color: #3587cb;
 }
 
 a:hover {
 	text-decoration: none;
-	color: #7ACE11;
+	/* color: #7ACE11; */
 }
 
 /* Header */
@@ -88,6 +89,7 @@ a:hover {
 	padding-right: 20px;
 	text-decoration: none;
 	color: #FFFFFF;
+	text-shadow: 0px 0px 45px #fff;
 }
 
 #logo p {
@@ -129,7 +131,9 @@ a:hover {
 }
 
 #menu a:hover, .active a {
-	border-bottom: 3px solid #FFFFFF;
+	/* border-bottom: 3px solid #FFFFFF; */
+	text-shadow: 0px 5px 10px #fff;
+	border-bottom: 1px dotted #333;
 }
 
 
@@ -160,7 +164,8 @@ a:hover {
 
 .byline {
 	margin: 0;
-	color: #D79B00;
+	/* color: #D79B00; */
+	color: #aaa;
 }
 
 .meta {
@@ -220,9 +225,10 @@ a:hover {
 
 #footer {
 	clear: both;
-	margin: 0px;
+	margin: 20px 0px;
 	height: 80px;
-	background: #F2F2F2 url(../images/bg02.jpg) repeat-x left top;
+	/* background: #F2F2F2 url(../images/bg02.jpg) repeat-x left top; */
+	background: #000;
 }
 
 #footer p {

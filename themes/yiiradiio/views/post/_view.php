@@ -4,6 +4,6 @@
 			<div class="entry">
 				<?php echo $data->content; ?>
 			</div>
-			<p class="meta"><a href="<?php echo $this->createUrl( 'post/view', array( 'id' => $data->id, ) );?>" class="more">Read More</a> &nbsp;&nbsp;&nbsp; <a href="#" class="comments">Comments (33)</a></p>
+			<p class="meta"><a href="<?php echo $this->createUrl( 'post/view', array( 'id' => $data->id, ) );?>#comments" class="comments">Comments</a></p>
 			<p class="meta"><strong>Tags:</strong> <?php echo $data->tags; ?></p>
 </div>

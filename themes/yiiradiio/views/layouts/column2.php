@@ -1,5 +1,13 @@
 <?php $this->beginContent('//layouts/main'); ?>
 		<div id="content">
+
+		<?php if( Yii::app()->user->isGuest ) : ?>
+			<div style="text-align:center;margin-bottom:10px;" title='Yii Themes - your first step to be ridiculously good looking'>
+				<a href="http://yiithemes.mehesz.net" target="_blank"><img src="http://yiiradiio.mehesz.net/images/banner_yiithemes.jpg" border="0" /></a>
+			</div>
+		<?php endif; ?>
+
+
 			<?php echo $content; ?>
 		</div><!-- content -->
 		<div id="sidebar">
@@ -30,16 +38,14 @@
 
 		<ul>
 			<li>
-				<h2>Categories</h2>
+				<h2>Facebook</h2>
 				<ul>
-					<li><a href="#">Aliquam libero</a></li>
-					<li><a href="#">Consectetuer adipiscing elit</a></li>
-					<li><a href="#">metus aliquam pellentesque</a></li>
-					<li><a href="#">Suspendisse iaculis mauris</a></li>
-					<li><a href="#">Urnanet non molestie semper</a></li>
-					<li><a href="#">Proin gravida orci porttitor</a></li>
+					<li>
+<iframe src="http://www.facebook.com/plugins/likebox.php?id=106735669387278&amp;width=275&amp;connections=12&amp;stream=false&amp;header=false&amp;height=300" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:275px; height:300px;" allowTransparency="true"></iframe>
+					</li>
 				</ul>
 			</li>
+			<?php /*
 			<li>
 				<h2>Archives</h2>
 				<ul>
@@ -54,6 +60,7 @@
 					<li><a href="#">January</a> (31)</li>
 				</ul>
 			</li>
+			*/ ?>
 		</ul>
 
 		<?php

@@ -5,9 +5,7 @@ $this->breadcrumbs=array(
 $this->pageTitle=$model->title;
 ?>
 
-<?php $this->renderPartial('_view', array(
-	'data'=>$model,
-)); ?>
+<?php $this->renderPartial('_view', array( 'data'=>$model,)); ?>
 
 <?php /*
 <div id="comments">
@@ -36,3 +34,23 @@ $this->pageTitle=$model->title;
 
 </div><!-- comments -->
 */ ?>
+
+<h2>Comments: </h2>
+<div id="fb-root"></div>
+<script>
+window.fbAsyncInit = function() {
+		FB.init({appId: '171739672855626', status: true, cookie: true,
+						xfbml: true});
+};
+(function() {
+ var e = document.createElement('script');
+ e.type = 'text/javascript';
+ e.src = document.location.protocol +
+ '//connect.facebook.net/en_US/all.js';
+ e.async = true;
+ document.getElementById('fb-root').appendChild(e);
+ }());
+</script>
+
+<a name='comments'></a>
+<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#appId=171739672855626&amp;xfbml=1"></script><fb:comments xid="<?php echo 'yiiradiio_comments_' . $model->id; ?>" numposts="10" width="575" publish_feed="true"></fb:comments>
