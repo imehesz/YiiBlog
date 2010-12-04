@@ -7,3 +7,4 @@ protected/runtime/*
 development.php
 production.php
 *.sqlite
+downloads/*
