@@ -132,8 +132,7 @@ a:hover {
 
 #menu a:hover, .active a {
 	/* border-bottom: 3px solid #FFFFFF; */
-	text-shadow: 0px 5px 10px #fff;
-	border-bottom: 1px dotted #333;
+	text-shadow: 0px 0px 20px #fff, 0px 0px 5px #fff;
 }
 
 
@@ -236,4 +235,18 @@ a:hover {
 	text-align: center;
 	font-size: smaller;
 	color: #717171;
+}
+
+.tweet_list
+{
+	font-size:0.9em;
+	line-height: 130% !important;
+}
+
+#sidebar li .tweet_even{
+	margin-bottom: 10px;
+}
+
+#sidebar li .tweet_odd{
+	margin-bottom: 10px;
 }

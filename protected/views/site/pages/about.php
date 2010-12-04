@@ -4,7 +4,7 @@ $this->breadcrumbs=array(
 	'About',
 );
 ?>
-<h1>About</h1>
+<h1>about</h1>
 
-<p>This is a "static" page. You may change the content of this page
-by updating the file <tt><?php echo __FILE__; ?></tt>.</p>
+<p>We started <b>Yii Radiio</b> in July 2009 and  we reached to more than <b>10.000</b> listeners in about <b>130</b> countries. We touch the variaty of topics in the Yii world, from forum topics, and blogs through releases and extensions.</p>
+<img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/yiicoverage.jpg"  title="Yii Radiio Coverage" />

@@ -44,10 +44,20 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 	'columns'=>array(
 		'id',
 		'title',
-		'content',
+//		'content',
 		'tags',
-		'status',
-		'create_time',
+		array(
+			'name' 	=> 'status',
+			'value'	=> '$data->status == 2 ? "Published" : "Not Published"',
+		),
+		array(
+			'name' 	=> 'create_time',
+			'value'	=> 'date("M d H:i", $data->create_time)',
+		),
+		array(
+			'name'	=> 'published_date',
+			'value'	=> 'date("M d H:i", $data->published_date)',
+		),
 		/*
 		'update_time',
 		'userID',

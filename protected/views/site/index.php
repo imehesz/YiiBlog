@@ -1,16 +1,9 @@
 <?php $this->pageTitle=Yii::app()->name; ?>
 
-<h1>Welcome to <i><?php echo CHtml::encode(Yii::app()->name); ?></i></h1>
+<h1>Welcome to the <b>Yii Radiio</b> site</h1>
 
-<p>Congratulations! You have successfully created your Yii application.</p>
+<p>Please read and/or listen to the latest episode below. If you would like to browse through some older ones, please go to our <?php echo CHtml::link( 'episodes', $this->createUrl( '/post' ) ); ?> section.</p>
 
-<p>You may change the content of this page by modifying the following two files:</p>
-<ul>
-	<li>View file: <tt><?php echo __FILE__; ?></tt></li>
-	<li>Layout file: <tt><?php echo $this->getLayoutFile('main'); ?></tt></li>
-</ul>
+<p>Thanks, and enjoy :)</p>
 
-<p>For more details on how to further develop this application, please read
-the <a href="http://www.yiiframework.com/doc/">documentation</a>.
-Feel free to ask in the <a href="http://www.yiiframework.com/forum/">forum</a>,
-should you have any questions.</p>
+<?php echo $this->renderPartial( '//episode/_view', array( 'data' => Post::model()->find( 'status=' . Post::STATUS_PUBLISHED . ' AND published_date<' . time() . ' ORDER BY published_date DESC' ) ) ); ?>

@@ -1,5 +1,5 @@
 <?php $this->beginContent('//layouts/main'); ?>
-		<div id="content">
+		<div id="content" style="overflow:hidden;">
 
 		<?php if( Yii::app()->user->isGuest ) : ?>
 			<div style="text-align:center;margin-bottom:10px;" title='Yii Themes - your first step to be ridiculously good looking'>
@@ -22,12 +22,18 @@
 					<h2>about</h2>
 					<ul>
 						<li>
-							<strong>Imre Mehesz</strong> (me) a long time <strong>open source</strong> and <strong>PHP</strong> enthusiast. Started with PHP 3 and grew into the MVC world with CakePHP, Zend Framework and now the <strong>Yii Framework</strong>.							
+							<strong>Imre Mehesz</strong> (me) a long time <strong>open source</strong> and <strong>PHP</strong> enthusiast. Started with PHP 3 and grew into the MVC world with CakePHP, Zend Framework and now the <strong>Yii Framework</strong>. <?php echo CHtml::link( 'read more', $this->createUrl( 'site/page', array( 'view' => 'about' ) ) ); ?>.
 						</li>
 					</ul>
 				</li>
 			</ul>
-		
+			
+			<ul>
+				<li>
+					<?php $this->widget( 'LatestFive' ); ?>
+				</li>
+			</ul>
+
 			<ul>
 				<li>
 			<?php $this->widget('TagCloud', array(
@@ -63,6 +69,26 @@
 			*/ ?>
 		</ul>
 
+		<ul>
+			<li>
+				<h2>twitter</h2>
+				<div id="dwitter_user"></div>
+			</li>
+		</ul>
+
+		<ul>
+			<li>
+				<h2>feeds</h2>
+				<ul>
+					<li>
+						<?php echo CHtml::link( CHtml::image( Yii::app()->theme->baseUrl . '/images/feed-icon16x16.png' ) . ' Subscribe via RSS','http://feeds.feedburner.com/YiiRadiio-APodcastAboutTheYiiphpFramework' ); ?>
+					</li>
+					<li>
+						<?php echo CHtml::link( CHtml::image( Yii::app()->theme->baseUrl . '/images/itunes_logo.gif' ) . ' Subscribe via iTunes','http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=325740146' ); ?>
+					</li>
+				</ul>
+			</li>
+		</ul>
 		<?php
 			/*
 			$this->beginWidget('zii.widgets.CPortlet', array(
@@ -77,3 +103,26 @@
 		?>
 		</div><!-- sidebar -->
 <?php $this->endContent(); ?>
+<script language="javascript">
+$(document).ready(function(){
+	var userUpdates = function()
+	{
+		$('#dwitter_user').fadeOut();
+		$('#dwitter_user').html('');
+		$("#dwitter_user").tweet({
+			username: "yiiframework",
+			join_text: "auto",
+			avatar_size: '20px',
+			count: 3,
+			auto_join_text_default: "", 
+			auto_join_text_ed: "",
+			auto_join_text_ing: "",
+			auto_join_text_reply: "replied to",
+			auto_join_text_url: "",
+			loading_text: "loading tweets..."
+		});
+	$('#dwitter_user').fadeIn();
+	}
+	userUpdates();
+});
+</script>
