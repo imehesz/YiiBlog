@@ -58,7 +58,7 @@ class Post extends CActiveRecord
 					published_date_calendar, 
 					published_hour, 
 					published_min, 
-					published_ampm',                'length', 'max' => 128 ),
+					published_ampm, filename',      'length', 'max' => 128 ),
             array( 'status',                        'in', 'range' => array(1,2,3) ),
             array( 'tags',                          'match', 'pattern'=>'/^[\w\s,]+$/', 'message' => 'Tags can only contain word chars.' ),
             array( 'tags',                          'normalizeTags' ),
