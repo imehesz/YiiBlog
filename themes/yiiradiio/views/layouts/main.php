@@ -13,9 +13,12 @@ Released   : 20071220
 <html dir="ltr" lang="en-US" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://opengraphprotocol.org/schema/">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>Yii Radiio - a PHP podcast focusing on the Yii framework</title>
-<meta name="keywords" content="" />
-<meta name="description" content="" />
+<title><?php echo $this->pageTitle; ?></title>
+<meta name="keywords" content="yii framework, php, podcast, development, programming, html, css" />
+<meta name="description" content="Yii Radiio, a PHP podcast focusing on the Yii Framework" />
+
+<link rel="icon" href="<?php echo Yii::app()->theme->baseUrl; ?>/images/favicon.ico" type="image/x-icon">
+
 <link href="<?php echo Yii::app()->theme->baseUrl ?>/css/default.css" rel="stylesheet" type="text/css" media="screen" />
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
 <?php Yii::app()->clientScript->registerCoreScript('jquery'); ?>
