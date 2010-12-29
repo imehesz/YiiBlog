@@ -133,7 +133,7 @@ class EpisodeController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$this->pageTitle = 'Episode List';
+		$this->pageTitle = 'Yii Radiio - Episode List';
 		/*
 		$dataProvider=new CActiveDataProvider('Post');
 		$this->render('index',array(

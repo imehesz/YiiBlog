@@ -1,8 +1,8 @@
 <?php
-$this->breadcrumbs=array(
+/*$this->breadcrumbs=array(
 	$model->title,
-);
-$this->pageTitle=$model->title;
+);*/
+$this->pageTitle= 'Yii Radiio - ' . $model->title;
 ?>
 
 <?php $this->renderPartial('_view', array( 'data'=>$model,)); ?>
