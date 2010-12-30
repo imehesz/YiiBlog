@@ -2,7 +2,7 @@
 		<div id="content" style="overflow:hidden;">
 
 		<?php if( Yii::app()->user->isGuest ) : ?>
-			<div style="text-align:center;margin-bottom:10px;" title='Yii Themes - your first step to be ridiculously good looking'>
+			<div  class="sponsor" title='Yii Themes - your first step to be ridiculously good looking'>
 				<a href="http://yiithemes.mehesz.net" target="_blank"><img src="http://yiiradiio.mehesz.net/images/banner_yiithemes.jpg" border="0" /></a>
 			</div>
 		<?php endif; ?>
@@ -81,14 +81,21 @@
 				<h2>feeds</h2>
 				<ul>
 					<li>
-						<?php echo CHtml::link( CHtml::image( Yii::app()->theme->baseUrl . '/images/feed-icon16x16.png' ) . ' Subscribe via RSS','http://feeds.feedburner.com/YiiRadiio-APodcastAboutTheYiiphpFramework' ); ?>
+						<?php echo CHtml::link( CHtml::image( Yii::app()->theme->baseUrl . '/images/feed-icon16x16.png', null, array( 'border' => 0 ) ) . ' Subscribe via RSS','http://feeds.feedburner.com/YiiRadiio-APodcastAboutTheYiiphpFramework' ); ?>
 					</li>
 					<li>
-						<?php echo CHtml::link( CHtml::image( Yii::app()->theme->baseUrl . '/images/itunes_logo.gif' ) . ' Subscribe via iTunes','http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=325740146' ); ?>
+						<?php echo CHtml::link( CHtml::image( Yii::app()->theme->baseUrl . '/images/itunes_logo.gif', null, array('border' => 0) ) . ' Subscribe via iTunes','http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=325740146' ); ?>
 					</li>
 				</ul>
 			</li>
 		</ul>
+
+		<ul>
+			<li>
+				<?php $this->widget( 'WorldWide' ); ?>
+			</li>
+		</ul>
+	
 		<?php
 			/*
 			$this->beginWidget('zii.widgets.CPortlet', array(
