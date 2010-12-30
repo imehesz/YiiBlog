@@ -250,3 +250,14 @@ a:hover {
 #sidebar li .tweet_odd{
 	margin-bottom: 10px;
 }
+
+.sponsor
+{
+	width:585px;
+	height: 70px;
+	text-align:center;
+	margin-bottom:10px;
+	padding-top:10px;
+	/* background: url( ../images/sponsor2.jpg ); */
+	background-color: #000;
+}

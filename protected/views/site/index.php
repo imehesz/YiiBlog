@@ -2,7 +2,7 @@
 
 <h1>Welcome to the <b>Yii Radiio</b> site</h1>
 
-<p>Please read and/or listen to the latest episode below. If you would like to browse through some older ones, please go to our <?php echo CHtml::link( 'episodes', $this->createUrl( '/post' ) ); ?> section.</p>
+<p>Please read and/or listen to the latest episode below. If you would like to browse through some older ones, please go to our <?php echo CHtml::link( 'episodes', $this->createUrl( '/episode/list' ) ); ?> section.</p>
 
 <p>Thanks, and enjoy :)</p>
 
