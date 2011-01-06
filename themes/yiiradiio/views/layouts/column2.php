@@ -22,12 +22,24 @@
 					<h2>about</h2>
 					<ul>
 						<li>
-							<strong>Imre Mehesz</strong> (me) a long time <strong>open source</strong> and <strong>PHP</strong> enthusiast. Started with PHP 3 and grew into the MVC world with CakePHP, Zend Framework and now the <strong>Yii Framework</strong>. <?php echo CHtml::link( 'read more', $this->createUrl( 'site/page', array( 'view' => 'about' ) ) ); ?>.
+							<strong>Imre Mehesz</strong> (me) a long time <strong>open source</strong> and <strong>PHP</strong> enthusiast. Started with PHP 3 and grew into the MVC world with CakePHP, Zend Framework and now the <strong>Yii Framework</strong>. <?php // echo CHtml::link( 'read more', $this->createUrl( 'site/page', array( 'view' => 'about' ) ) ); ?>
 						</li>
 					</ul>
 				</li>
 			</ul>
-			
+
+			<ul>
+				<li>
+					<h2>got something?</h2>
+					<ul>
+						<li>
+							If you heard, read or wrote something that you would like to share with the <b>Yii Community</b>, <?php echo CHtml::link( 'contact us', $this->createUrl('site/contact') ); ?>  and we will make sure to put that in the next episode. 
+						</li>
+					</ul>
+				</li>
+			</ul>
+
+
 			<ul>
 				<li>
 					<?php $this->widget( 'LatestFive' ); ?>
