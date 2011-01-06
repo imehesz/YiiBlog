@@ -29,7 +29,7 @@ class Lookup extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'lookups';
+		return 'Lookups';
 	}
 
 	/**
