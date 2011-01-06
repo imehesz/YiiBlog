@@ -23,7 +23,7 @@ class Tag extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'tags';
+		return 'Tags';
 	}
 
 	/**

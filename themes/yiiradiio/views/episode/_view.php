@@ -1,4 +1,5 @@
 <div class="post">
+			<?php if( isset( $data ) ) : ?>
 			<h1 class="title"><?php echo CHtml::encode( $data->title );?>
 				<div style="float:right;">
 					<?php if( Yii::app()->controller->action->id != 'list' ) : ?>
@@ -32,4 +33,5 @@
 					</p>
 			<?php endif; ?>
 			<p class="meta"><strong>Tags:</strong> <?php echo $data->tags; ?></p>
+			<?php endif; ?>
 </div>
