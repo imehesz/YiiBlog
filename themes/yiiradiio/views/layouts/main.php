@@ -41,9 +41,10 @@ Released   : 20071220
 						}
 						</script><script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 		</div>
-		<?php $this->widget('zii.widgets.CMenu',array(
+		<?php 
+		$this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
-				array('label'=>'Home', 'url'=>array('/site/index')),
+				array('label'=>'Home', 'url'=> Yii::app()->request->baseUrl, 'active' => ( $this->id == 'site' && $this->action->id == 'index' ) ? true : null ),
 				array('label'=>'Forum', 'url'=> 'http://www.yiiframework.com/forum/index.php?/topic/3179-yii-radiio-podcast/' ),
 				array('label'=>'Episodes', 'url'=>array('/episode/list'), 'active' => $this->id == 'episode' ? true : null ),
 				/*
