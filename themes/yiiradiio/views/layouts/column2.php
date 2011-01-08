@@ -19,10 +19,13 @@
 
 			<ul>
 				<li>
-					<h2>about</h2>
+					<h2>about us</h2>
 					<ul>
 						<li>
-							<strong>Imre Mehesz</strong> (me) a long time <strong>open source</strong> and <strong>PHP</strong> enthusiast. Started with PHP 3 and grew into the MVC world with CakePHP, Zend Framework and now the <strong>Yii Framework</strong>. <?php // echo CHtml::link( 'read more', $this->createUrl( 'site/page', array( 'view' => 'about' ) ) ); ?>
+							<b>Yii Radiio</b> is the first, and so far <u>only</u>, online <b>podcast</b> that specifically focuses on the <b>Yii (PHP) framework</b>. <p>We bring the latest activities from the <b>Yii</b> community to listeners all over the world.</p> <p><b>Thank you all</b> for listening.</p>
+							<?php /*
+							<strong>Imre Mehesz</strong> (me) a long time <strong>open source</strong> and <strong>PHP</strong> enthusiast. Started with PHP 3 and grew into the MVC world with CakePHP, Zend Framework and now the <strong>Yii Framework</strong>. <?php // echo CHtml::link( 'read more', $this->createUrl( 'site/page', array( 'view' => 'about' ) ) ); ?> */
+							?>
 						</li>
 					</ul>
 				</li>
@@ -107,7 +110,18 @@
 				<?php $this->widget( 'WorldWide' ); ?>
 			</li>
 		</ul>
-	
+
+
+		<ul>
+			<li>
+				<h2>archives</h2>
+				<ul>
+					<li><a href="http://yiiradiio.mehesz.net/downloads/episodes0110.zip">Episodes 1-10</a> (23Mb)</li>
+					<li><a href="http://yiiradiio.mehesz.net/downloads/episodes1120.zip">Episodes 11-20</a> (32Mb)</li>
+					<li><a href="http://yiiradiio.mehesz.net/downloads/episodes2130.zip">Episodes 21-30</a> (35Mb)</li>
+				</ul>
+			</li>
+		</ul>
 		<?php
 			/*
 			$this->beginWidget('zii.widgets.CPortlet', array(

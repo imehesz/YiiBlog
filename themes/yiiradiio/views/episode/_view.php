@@ -28,8 +28,8 @@
 			</div>
 			<?php if( Yii::app()->controller->action->id != 'view' ) : ?>
 					<p class="meta">
-						<a href="<?php echo $this->createUrl( 'episode/view', array( 'id' => $data->id, ) );?>" class="more">read more</a>&nbsp;
-						<a href="<?php echo $this->createUrl( 'episode/view', array( 'id' => $data->id, ) );?>#comments" class="comments">comments</a>
+						<a href="<?php echo $this->createUrl( 'episode/view', array( 'id' => $data->id, 'title' => MUtility::strToPretty( $data->title ) ) );?>" class="more">read more</a>&nbsp;
+						<a href="<?php echo $this->createUrl( 'episode/view', array( 'id' => $data->id, 'title' => MUtility::strToPretty( $data->title ) ) );?>#comments" class="comments">comments</a>
 					</p>
 			<?php endif; ?>
 			<p class="meta"><strong>Tags:</strong> <?php echo $data->tags; ?></p>
