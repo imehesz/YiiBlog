@@ -2,8 +2,8 @@
 		<div id="content" style="overflow:hidden;">
 
 		<?php if( Yii::app()->user->isGuest ) : ?>
-			<div  class="sponsor" title='Yii Themes - your first step to be ridiculously good looking'>
-				<a href="http://yiithemes.mehesz.net" target="_blank"><img src="http://yiiradiio.mehesz.net/images/banner_yiithemes.jpg" border="0" /></a>
+			<div  class="sponsor" title='OUR SPONSOR: Bring the powerful ExtJS library to Your web applications with Ext4Yii!'>
+				<a href="http://ext4yii.com" target="_blank"><img src="http://yiiradiio.mehesz.net/images/banner_ext4yii.png" border="0" /></a>
 			</div>
 		<?php endif; ?>
 

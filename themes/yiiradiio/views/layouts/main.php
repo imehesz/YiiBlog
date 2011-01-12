@@ -68,5 +68,16 @@ Released   : 20071220
 	<p>&copy;<?php echo date('Y', time() ); ?> All Rights Reserved. &nbsp;&bull;&nbsp; <a href="http://mehesz.net">mehesz<span style="color:red;">.</span>net</a> &nbsp;&bull;&nbsp; making the web. better.<br />
 	<a href="http://yiiframework.com" target="_blank"><img src="<?php echo Yii::app()->theme->baseUrl; ?>/images/yii-power.png" border="0"/></a></p>
 </div>
+
+<script type="text/javascript"> 
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script> 
+<script type="text/javascript"> 
+try {
+var pageTracker = _gat._getTracker("UA-5417349-2");
+pageTracker._trackPageview();
+} catch(err) {}</script> 
+
 </body>
 </html>
