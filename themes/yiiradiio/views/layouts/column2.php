@@ -2,8 +2,10 @@
 		<div id="content" style="overflow:hidden;">
 
 		<?php if( Yii::app()->user->isGuest ) : ?>
-			<div  class="sponsor" title='Yii Themes: Your first step to be ridiculously good looking!'>
-				<a href="http://yiithemes.mehesz.net" target="_blank"><img src="http://yiiradiio.mehesz.net/images/banner_yiithemes.jpg" border="0" /></a>
+			<div  class="sponsor">
+                <?php if( $this->beginCache( 'adcache', array( 'duration' => 3600 ) ) ) : ?>
+                    <?php $this->widget( 'ReklamWidget', array( 'domain' => 'yiiradiio' ) ); ?>
+                <?php $this->endCache(); endif; ?>
 			</div>
 		<?php endif; ?>
 
