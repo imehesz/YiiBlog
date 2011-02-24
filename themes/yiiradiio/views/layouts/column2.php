@@ -118,9 +118,10 @@
 			<li>
 				<h2>archives</h2>
 				<ul>
-					<li><a href="http://yiiradiio.mehesz.net/downloads/episodes0110.zip">Episodes 1-10</a> (23Mb)</li>
-					<li><a href="http://yiiradiio.mehesz.net/downloads/episodes1120.zip">Episodes 11-20</a> (32Mb)</li>
-					<li><a href="http://yiiradiio.mehesz.net/downloads/episodes2130.zip">Episodes 21-30</a> (35Mb)</li>
+					<li><a href="http://yiiradiio.mehesz.net/downloads/episodes0110.zip">Episodes 1-10</a> (55Mb)</li>
+					<li><a href="http://yiiradiio.mehesz.net/downloads/episodes1120.zip">Episodes 11-20</a> (45Mb)</li>
+					<li><a href="http://yiiradiio.mehesz.net/downloads/episodes2130.zip">Episodes 21-30</a> (55Mb)</li>
+					<li><a href="http://yiiradiio.mehesz.net/downloads/episodes3140.zip">Episodes 31-40</a> (70Mb)</li>
 				</ul>
 			</li>
 		</ul>
