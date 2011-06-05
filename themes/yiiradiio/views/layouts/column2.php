@@ -38,7 +38,9 @@
 					<h2>got something?</h2>
 					<ul>
 						<li>
-							If you heard, read or wrote something that you would like to share with the <b>Yii Community</b>, <?php echo CHtml::link( 'contact us', $this->createUrl('site/contact') ); ?>  and we will make sure to put that in the next episode. 
+							If you heard, read or wrote something that you would like to share with the <b>Yii Community</b>, <?php echo CHtml::link( 'contact us', $this->createUrl('site/contact') ); ?>  and we will make sure to put that in the next episode. <br />
+							<a href="skype:yiiradiio?call"><img src="http://download.skype.com/share/skypebuttons/buttons/call_green_white_153x63.png" style="border: none;margin-left:20px;" width="153" height="63" alt="Skype Me™!" /></a>
+							<br /><a href="http://www.skype.com/go/download">Get Skype</a> and call me for free.<br /><br />
 						</li>
 					</ul>
 				</li>
