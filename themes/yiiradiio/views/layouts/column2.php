@@ -35,6 +35,21 @@
 
 			<ul>
 				<li>
+					<h2>hosting</h2>
+					<ul>
+						<li>
+							<?php echo CHtml::link( 'Web Site Hosting', 'http://webhostinggeeks.com/', array( 'target' => '_blank' ) ) ?>
+						</li>
+						<li>
+							<?php echo CHtml::link( 'Blog Web Host', 'http://www.webhostinghub.com/blog-hosting.html', array( 'target' => '_blank' ) ) ?>
+						</li>
+
+					</ul>
+				</li>
+			</ul>
+
+			<ul>
+				<li>
 					<h2>got something?</h2>
 					<ul>
 						<li>
