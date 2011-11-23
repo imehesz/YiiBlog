@@ -33,7 +33,6 @@
 				</li>
 			</ul>
 
-<?php /*
 			<ul>
 				<li>
 					<h2>hosting</h2>
@@ -48,7 +47,6 @@
 					</ul>
 				</li>
 			</ul>
-*/ ?>
 			<ul>
 				<li>
 					<h2>got something?</h2>
