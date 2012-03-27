@@ -115,64 +115,12 @@ class SiteController extends Controller
 
 	public function actionSponsor()
 	{
-		$sponsors = array(
-			array(
-				'name'	=> 'NewRelic',
-				'pic'	=> 'http://yiiradiio.mehesz.net/images/banner_newrelic.jpg',
-				'url'	=> 'http://newrelic.com',
-				'text'	=> 'Real-Time Web App Performance Monitoring',
-			),
-
-			array(
-				'name'	=> 'Yii Themes',
-				'pic'	=> 'http://yiiradiio.mehesz.net/images/banner_yiithemes.jpg',
-				'url'	=> 'http://yiithemes.mehesz.net',
-				'text'	=> 'Because some things are better in color.',
-			),
-
-			array(
-				'name'	=> 'Yii Jobz',
-				'pic'	=> 'http://yiiradiio.mehesz.net/images/banner_yiijobz.jpg',
-				'url'	=> 'http://yiijobz.mehesz.net',
-				'text'	=> 'Find yourself something better.',
-			),
-
-			array(
-				'name'	=> 'Ext 4 Yii',
-				'pic'	=> 'http://yiiradiio.mehesz.net/images/banner_ext4yii.png',
-				'url'	=> 'http://ext4yii.com',
-				'text'	=> '',
-			),
-
-			array(
-				'name'	=> 'PacktPub',
-				'pic'	=> 'http://yiiradiio.mehesz.net/images/banner_packt.jpg',
-				'url'	=> 'http://packtpub.com',
-				'text'	=> '',
-			),
-
-			array(
-				'name'	=> 'CMSAward.hu',
-				'pic'	=> 'http://yiiradiio.mehesz.net/images/banner_cmsaward.jpg',
-				'url'	=> 'http://cmsaward.hu',
-				'text'	=> 'Minden magyarul beszélő CMS egy helyen!',
-			),
-
-			array(
-				'name'	=> 'FaceySpacey',
-				'pic'	=> 'http://yiiradiio.mehesz.net/images/banner_facey.jpg',
-				'url'	=> 'http://faceyspacey.com',
-				'text'	=> '',
-			),
-
-			array(
-				'name'	=> 'CodeWarz',
-				'pic'	=> 'http://yiiradiio.mehesz.net/images/banner.gif',
-				'url'	=> 'http://codewarz.mehesz.net',
-				'text'	=> 'Can you code the universe?',
-			),
-
-		);
-		$this->render( 'sponsor', array( 'sponsors' => $sponsors ) );
+		if( ! empty( Yii::app()->params['sponsors'] ) )
+		{
+			$sponsors = Yii::app()->params['sponsors'];
+			var_dump( $sponsors );
+			die();
+			$this->render( 'sponsor', array( 'sponsors' => $sponsors ) );
+		}
 	}
 }
