@@ -118,8 +118,6 @@ class SiteController extends Controller
 		if( ! empty( Yii::app()->params['sponsors'] ) )
 		{
 			$sponsors = Yii::app()->params['sponsors'];
-			var_dump( $sponsors );
-			die();
 			$this->render( 'sponsor', array( 'sponsors' => $sponsors ) );
 		}
 	}
