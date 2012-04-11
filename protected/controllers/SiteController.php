@@ -121,4 +121,23 @@ class SiteController extends Controller
 			$this->render( 'sponsor', array( 'sponsors' => $sponsors ) );
 		}
 	}
+
+	public function actionYeti()
+	{
+		$model=new Yeti;
+
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
+
+		if(isset($_POST['Yeti']))
+		{
+			$model->attributes=$_POST['Yeti'];
+			if($model->save())
+			{
+				Yii::app()->user->setFlash( 'yetiadded', 'Thank you for submitting ' );
+			}
+		}
+
+		$this->render( 'yeti', array( 'model' => $model ) );
+	}
 }
