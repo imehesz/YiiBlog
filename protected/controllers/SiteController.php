@@ -134,7 +134,7 @@ class SiteController extends Controller
 			$model->attributes=$_POST['Yeti'];
 			if($model->save())
 			{
-				Yii::app()->user->setFlash( 'yetiadded', 'Thank you for submitting ' );
+				Yii::app()->user->setFlash( 'yetiadded', 'Thank you for submitting!' );
 			}
 		}
 

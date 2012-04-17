@@ -15,6 +15,8 @@
  */
 class Yeti extends CActiveRecord
 {
+
+	public $verifyCode;
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @return Yeti the static model class
@@ -40,11 +42,13 @@ class Yeti extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('yiiuser_name, email_address, comment, ipaddress', 'required'),
+			array('yiiuser_id, yiiuser_name, email_address, comment, ipaddress', 'required'),
 			array('yiiuser_id', 'numerical', 'integerOnly'=>true),
 			array('yiiuser_name, email_address', 'length', 'max'=>255),
 			array('email_address', 'email', 'allowEmpty' => false ),
 			array('ipaddress', 'length', 'max'=>100),
+
+			array('verifyCode', 'captcha', 'allowEmpty'=>!extension_loaded('gd')),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, yiiuser_id, yiiuser_name, email_address, comment, ipaddress', 'safe', 'on'=>'search'),
@@ -72,7 +76,7 @@ class Yeti extends CActiveRecord
 			'yiiuser_id' => 'Yii User ID',
 			'yiiuser_name' => 'Yii User Name',
 			'email_address' => 'Your Email Address',
-			'comment' => 'Comment',
+			'comment' => 'Reason',
 			'ipaddress' => 'Ipaddress',
 		);
 	}

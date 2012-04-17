@@ -111,6 +111,14 @@ div.form select.success
 	border-color: #C6D880;
 }
 
+div.form .successSummary
+{
+	border: 2px solid #C6D880;
+	padding: 7px;
+	margin: 0 0 20px 0;
+	background: #E6EFC2;
+	font-size: 0.9em;
+}
 
 div.form .errorSummary
 {
