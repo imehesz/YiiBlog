@@ -25,6 +25,7 @@ Released   : 20071220
 <?php Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/jquery.tweet.js'); ?>
 </head>
 <body>
+<a name="top"></a>
 <!-- start header -->
 <div id="header">
 	<div id="logo">
@@ -45,6 +46,7 @@ Released   : 20071220
 		$this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
 				array('label'=>'Home', 'url'=> Yii::app()->request->baseUrl . '/', 'active' => ( $this->id == 'site' && $this->action->id == 'index' ) ? true : null ),
+				array( 'label' => 'yeti award', 'url' => $this->createUrl( '/site/yeti' ) ),
 				array('label'=>'Forum', 'url'=> 'http://www.yiiframework.com/forum/index.php?/topic/3179-yii-radiio-podcast/' ),
 				array('label'=>'Episodes', 'url'=>array('/episode/list'), 'active' => $this->id == 'episode' ? true : null ),
 				/*

@@ -42,7 +42,7 @@ class Yeti extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('yiiuser_id, yiiuser_name, email_address, comment, ipaddress', 'required'),
+			array('yiiuser_name, email_address, comment, ipaddress', 'required'),
 			array('yiiuser_id', 'numerical', 'integerOnly'=>true),
 			array('yiiuser_name, email_address', 'length', 'max'=>255),
 			array('email_address', 'email', 'allowEmpty' => false ),

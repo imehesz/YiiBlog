@@ -140,4 +140,21 @@ class SiteController extends Controller
 
 		$this->render( 'yeti', array( 'model' => $model ) );
 	}
+
+	public function actionAdminYeti()
+	{
+		if( Yii::app()->user->isGuest )
+		{
+			throw new CHttpException( 403, 'Oops! Meh?' );
+		}
+
+		$model=new Yeti('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Yeti']))
+			$model->attributes=$_GET['Yeti'];
+
+		$this->render('adminyeti',array(
+			'model'=>$model,
+		));
+	}
 }
